@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: alpine-nettools-svc
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 
+  ports:
+  - name: ssh
+    port: 22
+    protocol: TCP
+    targetPort: 22
+  selector:
+    app: alpine-nettools
