@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: alpine-nettools-ingress
+  namespace: default
+spec:
+  rules:
+  - host: nettools.testc1.k8s.yodel.net 
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: alpine-nettools-svc
+          servicePort: ssh
